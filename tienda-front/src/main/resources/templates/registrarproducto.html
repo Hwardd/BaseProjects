@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form method="POST" 
+  action="http://localhost:8080/create"
+  enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td><input type="text" name="nombre" /></td>
+        </tr>
+        <tr>
+            <td>Categoria</td>
+            <td><input type="text" name="categoria" /></td>
+		</tr>
+		
+		<tr>
+            <td>Subcategoria</td>
+            <td><input type="text" name="subcategoria" /></td>
+		</tr>
+		<tr>
+            <td>Marca</td>
+            <td><input type="text" name="marca" /></td>
+		</tr>
+		<tr>
+            <td>Cantidad</td>
+            <td><input type="text" name="cantidad" /></td>
+		</tr>
+		<tr>
+            <td>Costo</td>
+            <td><input type="text" name="costo" /></td>
+		</tr>
+		<tr>
+            <td>Precio</td>
+            <td><input type="text" name="precio" /></td>
+		</tr>
+		<tr>
+            <td>Descripcion</td>
+            <td><input type="text" name="descripcion" /></td>
+		</tr>
+		
+        <tr>
+            <td>Selecciona la imagen 1 de producto</td>
+            <td><input id="Image1" type="file" name="file"  onchange="document.getElementById('uploadPreview1').src = window.URL.createObjectURL(this.files[0])" /></td>
+             <td><img id="uploadPreview1" style="width: 100px; height: 100px;"/></td>
+		</tr>
+
+		<tr>
+            <td>Selecciona la imagen 2 de producto</td>
+            <td><input id="Image2" type="file" name="file" onchange="document.getElementById('uploadPreview2').src = window.URL.createObjectURL(this.files[0])"/></td>
+            <td><img id="uploadPreview2" style="width: 100px; height: 100px;"/></td>
+            
+		</tr>
+		
+		<tr>
+            <td>Selecciona la imagen 3 de producto</td>
+            <td><input id="Image3" type="file" name="file" onchange="document.getElementById('uploadPreview3').src = window.URL.createObjectURL(this.files[0])"/></td>
+             <td><img id="uploadPreview3" style="width: 100px; height: 100px;"/></td>
+		</tr>
+		
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+	</table>
+      
+</form>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <form method="GET" 
+  action="/vender/productos">
+    <table>
+        <tr>
+            <td>Buscar</td>
+			<td><input type="text" name="search" th:value="${lastsearch}" /></td>
+			<td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+    </form>
+    
+   
+     <table cellspacing="25">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>    
+    <tbody>
+     <tr th:each="product : ${products}">
+            <td><span th:text="${product.nombre}"> Nombre </span></td>
+            <td><input type="text" id="precio" name="precio" th:value="${product.precio}"></td>
+            <td><input type="text" id="cantidad" name="cantidad" th:value="1"></td>
+            <td><img th:src="@{${product.firstimagen}}" style="width: 100px; height: 100px;"/></td>
+            <td><button type="button">Vender</button> 
+        
+        </tbody>
+        
+     </table>
+</body>
+</html>
